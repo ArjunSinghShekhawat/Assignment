@@ -12,6 +12,8 @@ This project demonstrates CRUD operations (GET, POST, PUT, DELETE) using a Sprin
 - **URL:** `/movies/{movieId}/reviews`
 - **Method:** `POST`
 - **Description:** Adds a review for a specific movie.
+
+- Example movieId-: 1
 - **Request Body:**
     ```json
     {
@@ -25,7 +27,10 @@ This project demonstrates CRUD operations (GET, POST, PUT, DELETE) using a Sprin
     - Example:
     ```json
     {
-      "message": "Review added successfully."
+       "id":1,
+      "reviewerName": "jay Jaat",
+      "comment": "Super Movie",
+      "rating": 3
     }
     ```
 
@@ -44,8 +49,11 @@ This project demonstrates CRUD operations (GET, POST, PUT, DELETE) using a Sprin
     - Status: `200 OK`
     - Example:
     ```json
-    {
-      "message": "Review updated successfully."
+     {
+       "id":1,
+      "reviewerName": "jay Jaat",
+      "comment": "Super Movie",
+      "rating": 5
     }
     ```
 
@@ -68,7 +76,10 @@ This project demonstrates CRUD operations (GET, POST, PUT, DELETE) using a Sprin
     - Example:
     ```json
     {
-      "message": "Movie created successfully."
+       "id":1,
+      "title": "Ram Aayenge",
+      "genre": "Dharmik",
+      "releaseYear": "2023",
     }
     ```
 
@@ -85,7 +96,14 @@ This project demonstrates CRUD operations (GET, POST, PUT, DELETE) using a Sprin
         "id": 1,
         "title": "Ram Aayenge",
         "genre": "Dharmik",
-        "releaseYear": "2023"
+        "releaseYear": "2023",
+        "reviews":[
+     {
+      "reviewerName": "jay Jaat",
+      "comment": "Super Movie",
+      "rating": 3
+    }
+    ]
       },
       {
         "id": 2,
@@ -95,29 +113,3 @@ This project demonstrates CRUD operations (GET, POST, PUT, DELETE) using a Sprin
       }
     ]
     ```
-
-## Testing and Usage
-
-1. **Step 1:** Send requests.
-   - Use the given `POST`, `GET`, `PUT`, `DELETE` HTTP methods for CRUD operations.
-   - Open each request in your Postman collection and click "Send".
-
-2. **Step 2:** View responses.
-   - Check the response tab for status codes, response time, and size.
-
-3. **Step 3:** Send new Body data.
-   - Update or add data in the "Body" section of `POST` and `PUT` requests.
-
-4. **Step 4:** Update the variable.
-   - Replace the `base_url` with your own API endpoint in the Postman collection.
-
-## Example Requests
-
-### Add Review Example Request (Postman)
-
-```json
-{
-  "reviewerName": "John Doe",
-  "comment": "Amazing movie!",
-  "rating": 4
-}
